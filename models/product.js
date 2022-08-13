@@ -3,12 +3,29 @@ module.exports = (sequelize, type) => {
         id:{
             type: type.INTEGER, 
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false,
         },
-        nameProd: type.STRING,
-        precioProd: type.INTEGER,
-        ivaProd: type.INTEGER,
-        date:type.DATE,
-        stock: type.INTEGER,
+        nameProd:{ 
+            type: type.STRING,
+            allowNull: false,
+        },
+        precioProd: {
+           type: type.INTEGER,
+           allowNull: false,
+        },
+
+        ivaProd: {
+          type:  type.INTEGER,
+          allowNull: false,
+
+        }, 
+        date: { 
+            type: type.DATE,
+            allowNull: false, },
+        stock: {
+            type: type.INTEGER,
+            allowNull: false,
+        } 
     });
 };

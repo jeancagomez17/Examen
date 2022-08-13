@@ -3,12 +3,21 @@ module.exports = (sequelize, type) => {
         id:{
             type: type.INTEGER, 
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false,
         },
-        name: type.STRING,
-        last_name: type.STRING,
-        pass: type.STRING,
-        date:type.DATE,
+        name: { 
+            type: type.STRING,
+            allowNull: false,
+        },
+        last:{ 
+            type: type.STRING,
+            allowNull: false,
+        },
+        pass:{ 
+            type: type.STRING,
+            allowNull: false,
+        }
     });
 };
 

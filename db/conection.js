@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize');
 
-// const FilmModel = require('./models/films.js');
 const UsersModel =  require('../models/users.js') //Instancia de los users
+const ProdsModel = require('../models/product.js');
+const VentsModel = require('../models/venta.js');
+
 
 const seque = new Sequelize('examen','root', 'Jeancarlos17', {
     host: 'localhost',
@@ -10,7 +12,10 @@ const seque = new Sequelize('examen','root', 'Jeancarlos17', {
 
 
 const Users = UsersModel(seque, Sequelize);
-// const Film = FilmModel(seque, Sequelize);
+const Prods = ProdsModel(seque, Sequelize);
+const Vents = VentsModel(seque, Sequelize);
+
+
 
 seque.sync({ force: false })
 .then( () => {
@@ -19,5 +24,7 @@ seque.sync({ force: false })
 
 
 module.exports = {
-    Users
+    Users,
+    Prods,
+    Vents
 }
