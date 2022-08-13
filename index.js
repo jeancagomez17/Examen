@@ -3,14 +3,14 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-// const apiRouter = require('./routes/api.js');
+const apiRouter = require('./routes/api.js');
 
 const app = express();
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended:true}));
+app.use(bodyParser.urlencoded({ extended:true}));
 
-// require('./db');
+require('./db/conection.js');
 
 
 // app.get('/', (req, res)=>{
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // });
 
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 app.listen(3000, ()=>{
     console.log('Server listo')
