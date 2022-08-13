@@ -13,8 +13,10 @@ app.use(bodyParser.urlencoded({ extended:true}));
 require('./db/conection.js');
 
 
+app.use(express.static('public'));
+
 // app.get('/', (req, res)=>{
-//     res.send('welcome');
+//     res.send('./');
 
 // });
 

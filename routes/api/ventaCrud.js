@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Vents } = require('../../db/conection.js');
-// const {indexDB } = require('../../models/indexDB.js');
 const { check, validationResult } = require('express-validator');
 
 
